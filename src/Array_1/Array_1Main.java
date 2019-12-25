@@ -11,7 +11,7 @@ public class Array_1Main {
 		int [] testHas23 = {2, 4};
 		int [] testRotateLeft3 = {2, 4, 5};
 		int [] testRotateRight3 = {9, 7, 6};
-		
+
 		
 		boolean verdict = Array_1MainImpl.firstLast6(test);
 		System.out.println(verdict);

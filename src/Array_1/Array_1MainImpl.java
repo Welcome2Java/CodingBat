@@ -48,14 +48,6 @@ public class Array_1MainImpl {
 		  return result;
 	}
 
-//	public int[] rotateLeft3(int[] nums) {
-//		  
-//	}
-//
-//	public int[] reverse3(int[] nums) {
-//		  
-//	}
-	
 	public static int sum2(int[] nums) {
 		int sum = 0;
 		if (nums.length == 0) {
@@ -78,9 +70,7 @@ public class Array_1MainImpl {
 	}
 
 	public static boolean has23(int[] nums) {
-
 		return nums[0] == 2 || nums[0] == 3 || nums[1] == 2 || nums[1] == 3;
-
 	}
 	
 	public static int[] rotateLeft3(int[] nums) {
