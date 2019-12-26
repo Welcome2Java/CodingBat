@@ -139,7 +139,21 @@ public class Array_1MainImpl {
 		return result;
 	}
 
+	public static boolean no23(int[] nums) {
+		  return !(nums[0]==2 || nums[0]==3 || nums[1]==3 || nums[1]==2);
+		}
 	
+	public static int[] makeLast(int[] nums) {
+		  int size = nums.length;
+		  int lastNumber = nums[size-1];
+		  
+		  int [] result;
+		  result = new int[size*2];
+		  
+		  result[result.length-1]= lastNumber;
+		  return result;
+		}
+
 	
 	
 }

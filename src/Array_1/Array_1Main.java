@@ -48,6 +48,12 @@ public class Array_1Main {
 		
 		result = Array_1MainImpl.makeEnds(test3);
 		System.out.println(result);
+		
+		verdict = Array_1MainImpl.no23(testHas23);
+		System.out.println(verdict);
+		
+		result = Array_1MainImpl.makeLast(test3);
+		System.out.println(result);
 	}
 
 }

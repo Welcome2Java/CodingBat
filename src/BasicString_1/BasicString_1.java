@@ -86,7 +86,7 @@ public class BasicString_1 extends BasicString_1_Impl {
 		result = without2("HelloHi");
 		System.out.println(result);
 		
-		result = seeColor("blueTimes");
+		result = deFront("away");
 		System.out.println(result);
 		
 		result = seeColor("blueTimes");

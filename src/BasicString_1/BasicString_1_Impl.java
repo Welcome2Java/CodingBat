@@ -253,7 +253,35 @@ public class BasicString_1_Impl {
 	}
 
 	public static String deFront(String str) {
-		return null;
+		if(str.length()==2){
+		    if(str.charAt(0)=='a' && str.charAt(1)=='b'){
+		      return "ab";
+		    } 
+		    if(!(str.charAt(0)=='a') && str.charAt(1)=='b'){
+		      return "b" + str.charAt(str.length());
+		    }
+		    if((str.charAt(0)=='a') && !(str.charAt(1)=='b')){
+		      return "a";
+		    }
+
+		    return "";
+		  }
+		  if(str.length()>2){
+		    if(str.charAt(0)=='a' && !(str.charAt(1)=='b')){
+		      return "a" + str.substring(2, str.length());
+		    }
+		    if(str.charAt(0)=='a' && (str.charAt(1)=='b')){
+		      return "ab" + str.substring(2, str.length());
+		    }
+		    if(!(str.charAt(0)=='a') && (str.charAt(1)=='b')){
+		    return "b" + str.substring(2, str.length());
+		    }
+		    
+		    if(!(str.charAt(0)=='a' && str.charAt(1)=='b')){
+		      return str.substring(2, str.length());
+		    } 
+		  }
+		  return str+str;
 	}
 
 	public static String startWord(String str, String word) {
