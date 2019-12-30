@@ -289,8 +289,23 @@ public class BasicString_1_Impl {
 	}
 
 	public static String withoutX(String str) {
-		return null;
-	}
+		if (str.length() < 2) {
+				return "";
+			}
+
+			if (str.charAt(0) == ('x') && str.charAt(str.length() - 1) == ('x')) {
+				return str.substring(1, str.length() - 1);
+			}
+
+			if (str.charAt(0) == ('x') && !(str.charAt(str.length() - 1) == ('x'))) {
+				return str.substring(1, str.length());
+			}
+			if (!(str.charAt(0) == ('x')) && (str.charAt(str.length() - 1) == ('x'))) {
+				return str.substring(0, str.length()-1);
+			}
+
+			return str;
+	  } 
 
 	public static String withoutX2(String str) {
 		return null;
