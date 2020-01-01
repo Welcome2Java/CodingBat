@@ -9,7 +9,7 @@ public class Array_1Main {
 		int [] test3 = {1, 2, 3, 1};
 		int [] test4 = {1};
 		int [] testHas23 = {2, 4};
-		int [] testRotateLeft3 = {2, 4, 5};
+		int [] testRotateLeft3 = {2, 3, 5};
 		int [] testRotateRight3 = {9, 7, 6};
 
 		
@@ -57,6 +57,19 @@ public class Array_1Main {
 		
 		verdict = Array_1MainImpl.double23(testHas23);
 		System.out.println(verdict);
+		
+		result = Array_1MainImpl.makeLast(testHas23);
+		System.out.println(result);
+		
+		result = Array_1MainImpl.biggerTwo(testHas23, testHas23);
+		System.out.println(result);
+		
+		result = Array_1MainImpl.makeMiddle(testHas23);
+		System.out.println(result);
+		
+		result = Array_1MainImpl.plusTwo(testHas23, testHas23);
+		System.out.println(result);
+		
 	}
 
 }

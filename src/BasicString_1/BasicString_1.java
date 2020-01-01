@@ -92,7 +92,7 @@ public class BasicString_1 extends BasicString_1_Impl {
 		result =  withoutX("xblueTimesx");
 		System.out.println(result);
 
-		result = seeColor("blueTimes");
+		result = withoutX2("xHxllo");
 		System.out.println(result);
 
 		result = seeColor("blueTimes");

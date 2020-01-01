@@ -167,7 +167,81 @@ public class Array_1MainImpl {
 		  return false;
 		}
 	
+	public static int[] fix23(int[] nums) {
+		if (nums[0] == 2 && nums[1] == 3) {
+			nums[1] = 0;
+		}
+
+		if (nums[1] == 2 && nums[2] == 3) {
+			nums[2] = 0;
+		}
+
+		return nums;
+	}
+
+	public int start1(int[] a, int[] b) {
+		int count = 0;
+		if (a.length == 0 && b.length == 0) {
+			return count;
+		}
+		if (a.length == 0 && b.length > 0) {
+			if (b[0] == 1) {
+				count++;
+			}
+		}
+		if (a.length > 0 && b.length == 0) {
+
+			if (a[0] == 1) {
+				count++;
+			}
+		}
+
+		if (a.length > 0 && b.length > 0) {
+
+			if (a[0] == 1) {
+				count++;
+			}
+			if (b[0] == 1) {
+				count++;
+			}
+		}
+		return count;
+	}
+
+	public static int[] biggerTwo(int[] a, int[] b) {
+		  int sumA = 0;
+		  int sumB = 0;
+		  
+		  sumA = a[0]+a[1];
+		  sumB = b[0]+b[1];
+		  
+		  if((sumA > sumB) || (sumA == sumB)){
+		    return a;
+		  }
+		  return b;
+		  
+		}
+	public static int[] makeMiddle(int[] nums) {
+		  int [] result;
+				  result = new int[2];
+				  
+				  int size = nums.length;
+				  int half = size/2;
+				  result[0] = nums[half-1];
+				  result[1] = nums[half];
+				  return result;
+		}
 	
-	  
-	
+	public static int[] plusTwo(int[] a, int[] b) {
+		   int [] result;
+				  result = new int[4];
+				  
+				  result[0] = a[0]; 
+				  result[1] = a[1];
+				  result[2] = b[0];
+				  result[3] = b[1];
+				  
+				  return result;
+		}
+
 }

@@ -308,6 +308,24 @@ public class BasicString_1_Impl {
 	  } 
 
 	public static String withoutX2(String str) {
-		return null;
+		if (str.length() == 0) {
+			return "";
+		}
+		if (str.length() == 1) {
+			if (str.equals("x")) {
+				return "";
+			}
+		}
+
+		if ((str.charAt(0) == 'x' && str.charAt(1) == 'x') || (str.charAt(0) == 'x' || str.charAt(1) == 'x')) {
+			String subFirst = str.substring(0, 2);
+			String subLast = str.substring(2, str.length());
+			if (subFirst.charAt(0) == 'x' || subFirst.charAt(1) == 'x') {
+				subFirst = subFirst.replaceAll("x", "");
+			}
+			return subFirst + subLast;
+		}
+
+		return str;
 	}
 }
