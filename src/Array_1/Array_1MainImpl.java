@@ -221,27 +221,84 @@ public class Array_1MainImpl {
 		  return b;
 		  
 		}
+
 	public static int[] makeMiddle(int[] nums) {
-		  int [] result;
-				  result = new int[2];
-				  
-				  int size = nums.length;
-				  int half = size/2;
-				  result[0] = nums[half-1];
-				  result[1] = nums[half];
-				  return result;
-		}
+		int[] result;
+		result = new int[2];
+
+		int size = nums.length;
+		int half = size / 2;
+		result[0] = nums[half - 1];
+		result[1] = nums[half];
+		return result;
+	}
 	
 	public static int[] plusTwo(int[] a, int[] b) {
-		   int [] result;
-				  result = new int[4];
-				  
-				  result[0] = a[0]; 
-				  result[1] = a[1];
-				  result[2] = b[0];
-				  result[3] = b[1];
-				  
-				  return result;
+		int[] result;
+		result = new int[4];
+
+		result[0] = a[0];
+		result[1] = a[1];
+		result[2] = b[0];
+		result[3] = b[1];
+
+		return result;
+	}
+	
+	//need calls
+	public static int[] swapEnds(int[] nums) {
+		if (nums.length <= 1) {
+			return nums;
 		}
+		int first = nums[0];
+		int last = nums[nums.length - 1];
+		nums[0] = last;
+		nums[nums.length - 1] = first;
+
+		return nums;
+	}
+	
+	public static int[] midThree(int[] nums) {
+		if (nums.length <= 3) {
+			return nums;
+		}
+		int[] result = new int[3];
+		result[0] = nums[nums.length / 2 - 1];
+		result[1] = nums[nums.length / 2];
+		result[2] = nums[nums.length / 2 + 1];
+
+		return result;
+
+	}
+	//already called. 
+	public static int maxTriple(int[] nums) {
+		  if(nums.length ==1 ){
+		    return nums[0];
+		  }
+		  
+		  int max = nums[0];
+		  int middle = nums[nums.length/2];
+		  int last = nums[nums.length-1];
+		  
+		  if(max < middle){
+		    max = middle;
+		  }
+		  if(max < last){
+		    max = last;
+		  }
+		  return max;
+		}
+
+	public static int[] frontPiece(int[] nums) {
+		  if(nums.length<=2){
+		    return nums;
+		  }
+		  int[] result = new int[2];
+		  result[0]= nums[0];
+		  result[1]= nums[1];
+		  
+		  return result;
+		}
+
 
 }
