@@ -9,6 +9,4 @@ public class Logic_1Main implements Logic_1_Interface {
 		verdict = Logic_1_Interface.cigarParty(50, false);
 		System.out.println(verdict);
 	}
-
-
 }

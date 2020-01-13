@@ -229,10 +229,10 @@ public class BasicString_1_Impl {
 	}
 
 	public static String extraFront(String str) {
-		if(str.length()<=2) {
+		if (str.length() <= 2) {
 			return str + str + str;
 		}
-		String sub = str.substring(0,2);
+		String sub = str.substring(0, 2);
 		return sub + sub + sub;
 	}
 
@@ -243,7 +243,7 @@ public class BasicString_1_Impl {
 		if (str.length() == 2) {
 			return "";
 		}
-		//no need to declare extra objects to check. Substring comparison is enough
+		// no need to declare extra objects to check. Substring comparison is enough
 		String temp = str.substring(str.length() - 2, str.length());
 		String temp1 = str.substring(0, 2);
 		if (temp.equals(temp1)) {
@@ -253,59 +253,55 @@ public class BasicString_1_Impl {
 	}
 
 	public static String deFront(String str) {
-		if(str.length()==2){
-		    if(str.charAt(0)=='a' && str.charAt(1)=='b'){
-		      return "ab";
-		    } 
-		    if(!(str.charAt(0)=='a') && str.charAt(1)=='b'){
-		      return "b" + str.charAt(str.length());
-		    }
-		    if((str.charAt(0)=='a') && !(str.charAt(1)=='b')){
-		      return "a";
-		    }
+		if (str.length() == 2) {
+			if (str.charAt(0) == 'a' && str.charAt(1) == 'b') {
+				return "ab";
+			}
+			if (!(str.charAt(0) == 'a') && str.charAt(1) == 'b') {
+				return "b" + str.charAt(str.length());
+			}
+			if ((str.charAt(0) == 'a') && !(str.charAt(1) == 'b')) {
+				return "a";
+			}
 
-		    return "";
-		  }
-		  if(str.length()>2){
-		    if(str.charAt(0)=='a' && !(str.charAt(1)=='b')){
-		      return "a" + str.substring(2, str.length());
-		    }
-		    if(str.charAt(0)=='a' && (str.charAt(1)=='b')){
-		      return "ab" + str.substring(2, str.length());
-		    }
-		    if(!(str.charAt(0)=='a') && (str.charAt(1)=='b')){
-		    return "b" + str.substring(2, str.length());
-		    }
-		    
-		    if(!(str.charAt(0)=='a' && str.charAt(1)=='b')){
-		      return str.substring(2, str.length());
-		    } 
-		  }
-		  return str+str;
-	}
+			return "";
+		}
+		if (str.length() > 2) {
+			if (str.charAt(0) == 'a' && !(str.charAt(1) == 'b')) {
+				return "a" + str.substring(2, str.length());
+			}
+			if (str.charAt(0) == 'a' && (str.charAt(1) == 'b')) {
+				return "ab" + str.substring(2, str.length());
+			}
+			if (!(str.charAt(0) == 'a') && (str.charAt(1) == 'b')) {
+				return "b" + str.substring(2, str.length());
+			}
 
-	public static String startWord(String str, String word) {
-		return null;
+			if (!(str.charAt(0) == 'a' && str.charAt(1) == 'b')) {
+				return str.substring(2, str.length());
+			}
+		}
+		return str + str;
 	}
 
 	public static String withoutX(String str) {
 		if (str.length() < 2) {
-				return "";
-			}
+			return "";
+		}
 
-			if (str.charAt(0) == ('x') && str.charAt(str.length() - 1) == ('x')) {
-				return str.substring(1, str.length() - 1);
-			}
+		if (str.charAt(0) == ('x') && str.charAt(str.length() - 1) == ('x')) {
+			return str.substring(1, str.length() - 1);
+		}
 
-			if (str.charAt(0) == ('x') && !(str.charAt(str.length() - 1) == ('x'))) {
-				return str.substring(1, str.length());
-			}
-			if (!(str.charAt(0) == ('x')) && (str.charAt(str.length() - 1) == ('x'))) {
-				return str.substring(0, str.length()-1);
-			}
+		if (str.charAt(0) == ('x') && !(str.charAt(str.length() - 1) == ('x'))) {
+			return str.substring(1, str.length());
+		}
+		if (!(str.charAt(0) == ('x')) && (str.charAt(str.length() - 1) == ('x'))) {
+			return str.substring(0, str.length() - 1);
+		}
 
-			return str;
-	  } 
+		return str;
+	}
 
 	public static String withoutX2(String str) {
 		if (str.length() == 0) {
@@ -328,4 +324,44 @@ public class BasicString_1_Impl {
 
 		return str;
 	}
+
+	public static String startWord(String str, String word) {
+		int wordLength = word.length();
+
+		if (str.length() == 0) {
+			return "";
+		}
+		if (wordLength == 1) {
+			return str.substring(0, 1);
+		}
+		if (wordLength == 2) {
+			if (str.length() == 1) {
+				return "";
+			}
+
+			if (word.equals(str.substring(0, 2))) {
+				return str.substring(0, 2);
+			} else if (str.charAt(1) == word.charAt(1)) {
+				return str.substring(0, 2);
+			} else {
+				return "";
+			}
+
+		}
+
+		if (wordLength > 2 && wordLength <= 3) {
+			if (word.substring(1, 3).equals(str.substring(1, 3))) {
+				return str.substring(0, 3);
+			}
+			if ((str.charAt(1) == word.charAt(1)) && (str.charAt(2) == word.charAt(2))) {
+				return str.substring(0, 3);
+			} else {
+				return "";
+			}
+
+		}
+
+		return str;
+	}
+
 }

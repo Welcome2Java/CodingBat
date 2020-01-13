@@ -310,5 +310,7 @@ public interface Logic_1_Interface {
 		return 0;
 	}
 
+	
+
 
 }

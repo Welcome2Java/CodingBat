@@ -94,9 +94,14 @@ public class BasicString_1 extends BasicString_1_Impl {
 
 		result = withoutX2("xHxllo");
 		System.out.println(result);
+		
+		result = startWord("hippo", "hip");
+		System.out.println(result);
 
 		result = seeColor("blueTimes");
 		System.out.println(result);
+		
+		
 
 	}
 

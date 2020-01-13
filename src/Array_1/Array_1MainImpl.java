@@ -300,6 +300,65 @@ public class Array_1MainImpl {
 		  return result;
 		}
 
+	public static boolean unlucky1(int[] nums) {
+		if (nums.length == 0) {
+			return false;
+		}
+
+		if (nums.length > 1) {
+			if (nums[0] == 1 && nums[1] == 3) {
+				return true;
+			} else if (nums[1] == 1 && nums[2] == 3) {
+				return true;
+			} else if (nums[nums.length - 2] == 1 && nums[nums.length - 1] == 3) {
+				return true;
+			}
+		}
+		if (nums[nums.length - 1] == 1) {
+			return false;
+		}
+		return false;
+	}
 	
+	public int[] make2(int[] a, int[] b) {
+		int[] result;
+		result = new int[2];
+		result[0] = a[0];
+		if (a.length == 0 && b.length == 2) {
+			return b;
+
+		}
+		if (b.length == 0 && a.length == 2) {
+			return a;
+		}
+		if (a.length == 1) {
+			result[1] = b[0];
+		} else {
+			result[1] = a[1];
+		}
+		return result;
+	}
+	
+	public static int[] front11(int[] a, int[] b) {
+		int[] result;
+		if (a.length == 0 && b.length == 0) {
+			result = new int[0];
+			return result;
+		}
+		if (a.length == 0) {
+			result = new int[1];
+			result[0] = b[0];
+			return result;
+		}
+		if (b.length == 0) {
+			result = new int[1];
+			result[0] = a[0];
+			return result;
+		}
+		result = new int[2];
+		result[0] = a[0];
+		result[1] = b[0];
+		return result;
+	}
 
 }
