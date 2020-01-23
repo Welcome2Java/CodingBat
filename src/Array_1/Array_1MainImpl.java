@@ -360,5 +360,33 @@ public class Array_1MainImpl {
 		result[1] = b[0];
 		return result;
 	}
+	
+	
+	
+	
+	//sorting array smallest to largest
+	public static int[] sort(int[]array) {
+		//smallest element, swap it with the element in location 0
+		//find next smallest element and swap the element in location 1
+	
+		int indexMin;
+		for(int i=0; i<array.length-1; i++) {
+			
+			indexMin =i;
+			for(int j = i+1; j<array.length;j++) {
+				if(array[j]<array[indexMin]) {
+				indexMin = j;
+				}
+			}
+			int temp1 = array[indexMin];
+			int temp2 = array[i];
+			array[i] = temp1;
+			array[indexMin] = temp2;
+
+		}
+		
+		return array;
+	}
+	
 
 }

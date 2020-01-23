@@ -13,7 +13,7 @@ public class Array_1Main {
 		int[] testRotateLeft3 = { 2, 3, 5 };
 		int[] testRotateRight3 = { 9, 7, 6 };
 		int[] maxTripleArray = { 1, 7, 3, 1, 5 };
-
+		int[] arrayToSort = {5,78, 4,7,1,9,10};
 		boolean verdict = Array_1MainImpl.firstLast6(test);
 		System.out.println(verdict);
 
@@ -97,6 +97,11 @@ public class Array_1Main {
 		System.out.println();
 		int value = Array_1MainImpl.maxTriple(maxTripleArray);
 		System.out.println(value);
+		
+		result = Array_1MainImpl.sort(arrayToSort);
+		for (int i = 0; i < result.length; i++) {
+			System.out.print(result[i] + " ");
+		}
 	}
 
 }
