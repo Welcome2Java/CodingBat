@@ -295,7 +295,7 @@ public interface Logic_1_Interface {
 		}
 		return 10;
 	}
-	
+
 	public static int blueTicket(int a, int b, int c) {
 		int ab = a + b;
 		int bc = b + c;
@@ -310,7 +310,56 @@ public interface Logic_1_Interface {
 		return 0;
 	}
 
-	
+	public static int sumLimit(int a, int b) {
+		int sum = a + b;
+		String sumValue = String.valueOf(sum);
+		String aValue = String.valueOf(a);
+		if (sumValue.length() > aValue.length()) {
+			return a;
+		}
 
+		return a + b;
+	}
+
+	public static boolean shareDigit(int a, int b) {
+		String aString = String.valueOf(a);
+		String bString = String.valueOf(b);
+
+		if ((aString.charAt(0) == bString.charAt(0)) || (aString.charAt(0) == bString.charAt(1))
+				|| (aString.charAt(1) == bString.charAt(0)) || (aString.charAt(1) == bString.charAt(1))) {
+			return true;
+		}
+		return false;
+	}
+
+	public static boolean less20(int n) {
+		if (n % 20 == 18 || n % 20 == 19) {
+			return true;
+		}
+		return false;
+	}
+
+	public static boolean lessBy10(int a, int b, int c) {
+		  if(c-a ==10 || c-a > 10){
+		    return true;
+		  }
+		   if(b-a ==10 || b-a > 10){
+		    return true;
+		  }
+		  if(a-b ==10 || a-b > 10){
+		    return true;
+		  }
+		  
+		  if(c-b ==10 || c-b > 10){
+		    return true;
+		  }
+		  
+		  if(b-c ==10 || b-c > 10){
+		    return true;
+		  }
+		  
+		  
+		  
+		  return false;
 
 }
