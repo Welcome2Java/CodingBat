@@ -340,26 +340,25 @@ public interface Logic_1_Interface {
 	}
 
 	public static boolean lessBy10(int a, int b, int c) {
-		  if(c-a ==10 || c-a > 10){
-		    return true;
-		  }
-		   if(b-a ==10 || b-a > 10){
-		    return true;
-		  }
-		  if(a-b ==10 || a-b > 10){
-		    return true;
-		  }
-		  
-		  if(c-b ==10 || c-b > 10){
-		    return true;
-		  }
-		  
-		  if(b-c ==10 || b-c > 10){
-		    return true;
-		  }
-		  
-		  
-		  
-		  return false;
+		if (c - a == 10 || c - a > 10) {
+			return true;
+		}
+		if (b - a == 10 || b - a > 10) {
+			return true;
+		}
+		if (a - b == 10 || a - b > 10) {
+			return true;
+		}
 
+		if (c - b == 10 || c - b > 10) {
+			return true;
+		}
+
+		if (b - c == 10 || b - c > 10) {
+			return true;
+		}
+
+		return false;
+
+	}
 }
