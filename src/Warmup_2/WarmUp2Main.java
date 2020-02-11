@@ -3,8 +3,8 @@ package Warmup_2;
 
 public class WarmUp2Main {
 
-	public static void main(String [] args) {
-		
+	public static void main(String[]args) {
+
 	}
 	
 	public String stringTimes(String str, int n) {
@@ -47,6 +47,8 @@ public class WarmUp2Main {
 		if (index == -1) {
 			return false;
 		}
+		
+		
 		if (index == str.length() - 1) {
 			return false;
 		}
@@ -57,4 +59,39 @@ public class WarmUp2Main {
 
 		return false;
 	}
+	
+	public String stringBits(String str) {
+		String result = "";
+
+		int length = str.length();
+
+		for (int i = 0; i < length; i++) {
+			if (i % 2 == 0) {
+				String index = Character.toString(str.charAt(i));
+				result = result + index;
+
+			}
+		}
+
+		return result;
+	}
+
+	
+	public int last2(String str) {
+		if (str.length() <= 2) {
+			return 0;
+		}
+
+		String last = str.substring(str.length() - 2);
+		int count = 0;
+		for (int i = 0; i < str.length() - 2; i++) {
+			String sub = str.substring(i, i + 2);
+			if (last.equals(sub)) {
+				count++;
+			}
+		}
+
+		return count;
+	}
+
 }
