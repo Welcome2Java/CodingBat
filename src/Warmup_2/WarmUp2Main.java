@@ -93,5 +93,53 @@ public class WarmUp2Main {
 
 		return count;
 	}
+	
+	public int arrayCount9(int[] nums) {
+		int size = nums.length;
+		int count = 0;
+
+		for (int i = 0; i < size; i++) {
+			int value = nums[i];
+			if (value == 9) {
+				count++;
+			}
+		}
+
+		return count;
+	}
+	
+	public boolean arrayFront9(int[] nums) {
+		int size = nums.length;
+
+		for (int i = 0; i < size; i++) {
+			int value = nums[i];
+			if (value == 9) {
+				if (i > 3) {
+					return false;
+				}
+				return true;
+			}
+		}
+		return false;
+	}
+
+	public boolean array123(int[] nums) {
+		int size = nums.length;
+		if (size > 2) {
+			for (int i = 0; i < size - 2; i++) {
+				int value = nums[i];
+				if (value == 1) {
+					int second = nums[i + 1];
+					int third = nums[i + 2];
+					if (second == 2 && third == 3) {
+						return true;
+					}
+				}
+			}
+		}
+
+		return false;
+	}
+
 
 }
