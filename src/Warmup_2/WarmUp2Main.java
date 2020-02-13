@@ -141,5 +141,59 @@ public class WarmUp2Main {
 		return false;
 	}
 
+	public String stringYak(String str) {
+		if (str.contains("yak")) {
+			str = str.replaceAll("yak", "");
+		}
+		return str;
+	}
+	
+	public boolean has271(int[] nums) {
+		int length = nums.length;
+		if (length >= 3) {
+			for (int i = 0; i < length - 2; i++) {
+				int value = nums[0];
+				if (value == 2) {
+					if (nums[i + 1] == 7 && nums[i + 2] == 1) {
+						return true;
+					}
+				}
+			}
+		}
+		return false;
+	}
+	
+	public boolean catDog(String str) {
+		int cat = 0;
+		int dog = 0;
+		int length = str.length();
+		if (length < 3) {
+			return true;
+		}
+		if (str.contains("cat") && str.contains("dog")) {
+			for (int i = 0; i < length - 2; i++) {
+				char first = str.charAt(i);
+				char second = str.charAt(i + 1);
+				char third = str.charAt(i + 2);
+				if (first == 'c') {
+					if (second == 'a' && third == 't') {
+						cat++;
+					}
+				}
+
+				if (first == 'd') {
+					if (second == 'o' && third == 'g') {
+						dog++;
+					}
+				}
+			}
+			if (cat == dog) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+
 
 }
