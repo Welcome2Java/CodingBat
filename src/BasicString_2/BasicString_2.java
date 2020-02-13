@@ -33,6 +33,38 @@ public class BasicString_2 {
 
 		return count;
 	}
+	
+	public boolean catDog(String str) {
+		int cat = 0;
+		int dog = 0;
+		int length = str.length();
+		if (length < 3) {
+			return true;
+		}
+		if (str.contains("cat") && str.contains("dog")) {
+			for (int i = 0; i < length - 2; i++) {
+				char first = str.charAt(i);
+				char second = str.charAt(i + 1);
+				char third = str.charAt(i + 2);
+				if (first == 'c') {
+					if (second == 'a' && third == 't') {
+						cat++;
+					}
+				}
+
+				if (first == 'd') {
+					if (second == 'o' && third == 'g') {
+						dog++;
+					}
+				}
+			}
+			if (cat == dog) {
+				return true;
+			}
+		}
+
+		return false;
+	}
 
 
 }
