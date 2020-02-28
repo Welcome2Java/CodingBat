@@ -149,50 +149,45 @@ public class WarmUp2Main {
 	}
 	
 	public boolean has271(int[] nums) {
-		int length = nums.length;
-		if (length >= 3) {
-			for (int i = 0; i < length - 2; i++) {
-				int value = nums[0];
-				if (value == 2) {
-					if (nums[i + 1] == 7 && nums[i + 2] == 1) {
-						return true;
-					}
-				}
-			}
-		}
-		return false;
+
+		  for (int i=0; i < (nums.length-2); i++) {
+		    int val = nums[i];
+		    if (nums[i+1] == (val+5) &&              
+		      Math.abs(nums[i+2] - (val-1)) <= 2) {  
+		        return true;
+		    }
+		  }
+		  return false;
 	}
 	
-	public boolean catDog(String str) {
-		int cat = 0;
-		int dog = 0;
-		int length = str.length();
-		if (length < 3) {
-			return true;
-		}
-		if (str.contains("cat") && str.contains("dog")) {
-			for (int i = 0; i < length - 2; i++) {
-				char first = str.charAt(i);
-				char second = str.charAt(i + 1);
-				char third = str.charAt(i + 2);
-				if (first == 'c') {
-					if (second == 'a' && third == 't') {
-						cat++;
-					}
-				}
-
-				if (first == 'd') {
-					if (second == 'o' && third == 'g') {
-						dog++;
-					}
-				}
+	int countXX(String str) {
+		String match = "xx";
+		int count = 0;
+		for(int i=0; i<str.length()-1; i++) {
+			String sub = str.substring(i,i+2);
+			if(sub.equals(match)) {
+				count++;
 			}
-			if (cat == dog) {
-				return true;
+		}
+		
+		return count;
+	}
+
+	public int stringMatch(String a, String b) {
+		int count = 0;
+		if (a.length() == 0 || b.length() == 0) {
+			return 0;
+		}
+		int len = Math.min(a.length(), b.length());
+		for (int i = 0; i < len - 1; i++) {
+			String aSub = a.substring(i, i + 2);
+			String bSub = b.substring(i, i + 2);
+			if (aSub.equals(bSub)) { // Use .equals() with strings
+				count++;
 			}
 		}
 
-		return false;
+		return count;
 	}
 
 
