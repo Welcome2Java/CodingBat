@@ -4,7 +4,8 @@ package Warmup_2;
 public class WarmUp2Main {
 
 	public static void main(String[]args) {
-
+		String result = altPairs("Chocolate");
+		System.out.println(result);
 	}
 	
 	public String stringTimes(String str, int n) {
@@ -189,6 +190,57 @@ public class WarmUp2Main {
 
 		return count;
 	}
+	
+	public String stringX(String str) {
 
+		if (str.length() == 0) {
+			return str;
+		}
+		if (str.length() == 1) {
+			if (str.contentEquals("x")) {
+				return str;
+			}
+		}
+
+		if (str.charAt(0) == 'x') {
+			if (str.charAt(str.length() - 1) == 'x') {
+				return "x" + str.replaceAll("x", "") + "x";
+			} else {
+				return "x" + str.replaceAll("x", "");
+			}
+		} else if (str.charAt(0) != 'x' && str.charAt(str.length() - 1) != 'x') {
+			return str.replaceAll("x", "");
+		}
+
+		return str;
+
+	}
+	
+	public static String altPairs(String str) {
+		String result = "";
+		String second = "";
+		String combine = "";
+		int length = str.length();
+		
+		if (str.length() <= 2) {
+			return str;
+		}
+		
+		int i = 0;
+		while (i <= length - 1) {
+			String first = Character.toString(str.charAt(i));
+			if (length - i != 1) {
+				second = Character.toString(str.charAt(i + 1));
+				combine = first + second;
+			} else {
+				combine = first;
+			}
+
+			result = result + combine;
+			i = i + 4;
+		}
+
+		return result;
+	}
 
 }
