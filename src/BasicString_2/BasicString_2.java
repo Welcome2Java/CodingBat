@@ -66,5 +66,17 @@ public class BasicString_2 {
 		return false;
 	}
 
+	public String doubleChar(String str) {
+		String result = "";
 
+		for (int i = 0; i < str.length(); i++) {
+			char character = str.charAt(i);
+			String convert = Character.toString(character);
+			String twice = convert + convert;
+			result = result + twice;
+		}
+		return result;
+	}
+
+	
 }

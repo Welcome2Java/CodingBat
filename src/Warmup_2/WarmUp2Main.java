@@ -242,5 +242,44 @@ public class WarmUp2Main {
 
 		return result;
 	}
+	
+	public int array667(int[] nums) {
+		int count = 0;
+
+		if (nums.length <= 1) {
+			return 0;
+		} else {
+			for (int i = 0; i < nums.length - 1; i++) {
+				int valueOne = nums[i];
+				int valueTwo = nums[i + 1];
+
+				if (valueOne == 6) {
+					if (valueOne == valueTwo) {
+						count++;
+					} else if (valueTwo == 7) {
+						count++;
+					}
+				}
+			}
+		}
+
+		return count;
+	}
+	
+	public boolean noTriples(int[] nums) {
+		  int length = nums.length;
+		  
+		  for(int i=0; i<length-2; i++){
+		    int value1 = nums[i];
+		    int value2 = nums[i+1];
+		    int value3 = nums[i+2];
+		    if(value1 == value2 && value2 == value3){
+		      return false;
+		    }    
+		    
+		  }
+		  return true;
+		}
+
 
 }
