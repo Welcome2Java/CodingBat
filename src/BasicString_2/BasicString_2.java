@@ -78,5 +78,68 @@ public class BasicString_2 {
 		return result;
 	}
 
-	
+	public boolean endOther(String a, String b) {
+		int lengthA = a.length();
+		int lengthB = b.length();
+		
+		
+		if (a.length() == 0 || b.length() == 0) {
+			return false;
+		}
+		String shortStr = "";
+		if (a.length() < b.length()) {
+			shortStr = a.toLowerCase();
+			b = b.toLowerCase();
+			if (b.contains(shortStr)) {
+				if(b.substring((lengthB-lengthA), lengthB).equals(shortStr)){
+					return true;
+				}
+			}
+
+		} else {
+			shortStr = b.toLowerCase();
+			a = a.toLowerCase();
+			if (a.contains(shortStr)) {
+				if(a.substring((lengthA-lengthB), lengthA).equals(shortStr)){
+					return true;
+				}
+			}
+		}
+
+		return false;
+	}
+
+	public int countCode(String str) {
+		  int count = 0;
+		  int length = str.length();
+		  if(length<4) {
+			  return 0;
+		  }
+
+		  for(int i=0; i<length-3; i++) {
+			  char first = str.charAt(i);
+			  char second = str.charAt(i+1);
+			  char third = str.charAt(i+3);
+			  if(first == 'c' && second == 'o' && third == 'e') {
+				  count++;
+			  }
+		  }
+		  return count;
+	}
+
+	public boolean bobThere(String str) {
+		  int length = str.length();
+		  if(length<3){
+		    return false;
+		  }
+		  for(int i=0; i<length-2; i++){
+		    char first = str.charAt(i);
+		    char third = str.charAt(i+2);
+		    if(first == 'b' && third == 'b'){
+		      return true;
+		    }
+		  }
+		  return false;
+		}
+
 }
