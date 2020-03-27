@@ -3,6 +3,77 @@ package Array_2;
 public class Array_2 {
 	
 	//medium array solutions
+	
+	public static void main(String [] args) {
+		int [] nums = {0, 2, 4};
+
+	}
+	
+	public boolean lucky13(int[] nums) {
+		boolean verdict = true;
+		boolean one = true;
+		boolean three = true;
+		for (int i = 0; i < nums.length; i++) {
+			int value = nums[i];
+			if (value == 1) {
+				one = false;
+			}
+			if (value == 3) {
+				three = false;
+			}
+
+		}
+		if (!one || !three) {
+			verdict = false;
+		}
+		return verdict;
+	}
+
+	public boolean has22(int[] nums) {
+		 boolean verdict = false;
+		 for(int i = 0; i<nums.length-1; i++) {
+			 int value = nums[i];
+			 if(value == 2 && nums[i+1]==2) {
+				 verdict = true;
+				 break;
+			 }
+		 }
+		 return verdict;
+	}
+
+	public int sum67(int[] nums) {
+		if (nums.length == 0) {
+			return 0;
+		}
+
+		int sumOfAll = 0;
+		for (int i = 0; i < nums.length; i++) {
+			int value = nums[i];
+			sumOfAll += value;
+		}
+
+		int inBetween = 0;
+		boolean check = false;
+		for (int n = 0; n < nums.length; n++) {
+			int sixOrSeven = nums[n];
+			if (sixOrSeven == 6) {
+				check = true;
+			}
+
+			if (check) {
+				inBetween += sixOrSeven;
+				if (sixOrSeven == 7) {
+					check = false;
+				}
+			} else if (sixOrSeven == 7) {
+
+			}
+		}
+
+		return sumOfAll - inBetween;
+	}
+	
+
 	public int countEvens(int[] nums) {
 		int count = 0;
 
@@ -32,7 +103,6 @@ public class Array_2 {
 
 		return sum;
 	}
-	
 	
 	public int bigDiff(int[] nums) {
 
