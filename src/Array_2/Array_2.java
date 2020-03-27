@@ -9,6 +9,41 @@ public class Array_2 {
 
 	}
 	
+	public boolean more14(int[] nums) {
+		int numberOfFour = 0;
+		int numberOfOne = 0;
+		for (int i = 0; i < nums.length; i++) {
+			int value = nums[i];
+			if (value == 1) {
+				numberOfOne++;
+			} else if (value == 4) {
+				numberOfFour++;
+			}
+		}
+		if (numberOfFour < numberOfOne) {
+			return true;
+		}
+		return false;
+	}
+
+	
+	public boolean sum28(int[] nums) {
+		boolean verdict = false;
+		int sum = 0;
+
+		for (int i = 0; i < nums.length; i++) {
+			int value = nums[i];
+			if (value == 2) {
+				sum += value;
+			}
+		}
+
+		if (sum == 8) {
+			verdict = true;
+		}
+		return verdict;
+	}
+	
 	public boolean lucky13(int[] nums) {
 		boolean verdict = true;
 		boolean one = true;
