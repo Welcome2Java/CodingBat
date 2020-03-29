@@ -5,10 +5,39 @@ public class Array_2 {
 	//medium array solutions
 	
 	public static void main(String [] args) {
-		int [] nums = {0, 2, 4};
+
 
 	}
 	
+	public boolean only14(int[] nums) {
+		  for(int i=0; i<nums.length; i++){
+		    int value = nums[i];
+		    if(value !=4 && value !=1){
+		      return false;
+		    }
+		  }
+		  return true;
+		}
+
+
+	public boolean has77(int[] nums) {
+		boolean verdict = false;
+		for (int i = 0; i < nums.length - 1; i++) {
+			int value = nums[i];
+			if (value == 7) {
+				if (nums[i + 1] == 7) {
+					return true;
+				}
+
+			}
+			if (i <= nums.length - 3 && nums[i] == 7 && nums[i + 2] == 7)
+				return true;
+		}
+		return verdict;
+	}
+			
+	
+
 	public boolean more14(int[] nums) {
 		int numberOfFour = 0;
 		int numberOfOne = 0;
