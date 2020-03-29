@@ -29,3 +29,33 @@ def makes10(a, b):
     if a == 10 or b == 10 or a + b == 10:
         return True
     return False
+
+def parrot_trouble(talking, hour):
+    if talking and hour < 7:
+        return True
+
+    if talking and hour > 20:
+        return True
+
+    return False
+
+def near_hundred(n):
+    if abs(100-n) <= 10 or abs(200-n)<= 10:
+        return True
+    else:
+        return False
+
+def pos_neg(a, b, negative):
+    if negative:
+        if a<0 and b<0:
+            return True
+        else:
+            return False
+    elif not negative:
+        if a<0 and b<0:
+            return False
+        elif a<0 or b<0:
+            return True
+        elif a>0 and b>0:
+            return False
+

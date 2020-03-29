@@ -6,6 +6,33 @@ public class BasicString_2 {
 		
 	}
 	
+	public boolean sameStarChar(String str) {
+		boolean verdict = false;
+
+		if (str.length() < 3) {
+			return true;
+		}
+
+		for (int i = 0; i < str.length() - 1; i++) {
+			char character = str.charAt(i);
+			if (str.contains("*")) {
+				if (i != 0) {
+					if (character == '*') {
+						if (str.charAt(i - 1) == str.charAt(i + 1)) {
+							verdict = true;
+						} else {
+							verdict = false;
+						}
+					}
+				}
+			} else {
+				verdict = true;
+			}
+		}
+		return verdict;
+	}
+
+
 	public int countHi(String str) {
 
 		int count = 0;
