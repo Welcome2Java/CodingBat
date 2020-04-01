@@ -59,3 +59,17 @@ def pos_neg(a, b, negative):
         elif a>0 and b>0:
             return False
 
+def not_string(str):
+    # len(str) gets the length of the string
+    # len(str) >= 3 seeing the length of the string is greater or equal to 3
+    # str[:3] goes from the start of the string up to but not
+    # including index 3
+    if len(str) >= 3 and str[:3] == "not":
+        return str
+    return ("not " + str)
+
+def missing_char(str, n):
+    length = len(str)
+    first = str[:n]
+    second = str[n+1:length]
+    return first + second

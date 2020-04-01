@@ -60,6 +60,7 @@ public class Logic_2 {
 	}
 	
 	public int blackjack(int a, int b) {
+		
 		if (a > 21 && b > 21) {
 			return 0;
 		} else if (a > 21) {
@@ -79,6 +80,50 @@ public class Logic_2 {
 	}
 	
 
+	public int luckySum(int a, int b, int c) {
+		
+		if (a == 13) {
+			return 0;
+		}
 
+		if (b == 13) {
+			return a;
+		}
+		if (c == 13) {
+			return a + b;
+		}
+
+		return a + b + c;
+	}
+
+	public boolean makeBricks(int small, int big, int goal) {
+		if (goal >= 5) {
+			if (goal / 5 >= big) {
+				goal = goal - (big * 5);
+			} else {
+				goal = goal % 5;
+			}
+		}
+		if (goal <= small) {
+			return true;
+		}
+		return false;
+	}
+
+	
+	public int makeChocolate(int small, int big, int goal) {
+		if(goal >= 5){
+            if(goal/5 >= big){
+                goal-= big * 5;
+            }else{
+                goal = goal % 5;
+            }
+        }
+        if(goal <= small) {
+        	return goal;
+        }
+        return -1;
+
+	}
 
 }
