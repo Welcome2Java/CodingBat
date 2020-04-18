@@ -2,8 +2,63 @@ package BasicString_2;
 
 public class BasicString_2 {
 	
-	public void run() {
+	public static void main(String [] args) {
+
+
+	}
+
+	public boolean xyzThere(String str) {
+		if (!str.contains("xyz")) {
+			return false;
+		} else {
+			str = str.replace(".xyz", "yes");
+			if (str.contains("xyz")) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+	}
+	
+	public String mixString(String a, String b) {
 		
+		String result = "";
+		int count = 0;
+		
+		if (a.length() == 0) {
+			return b;
+		}
+		if (b.length() == 0) {
+			return a;
+		}
+		if (a.length() == 0 && b.length() == 0) {
+			return "";
+		}
+
+		int loopcondition = 0;
+		if (a.length() == b.length()) {
+			loopcondition = a.length();
+		} else if (a.length() < b.length()) {
+			loopcondition = a.length();
+		} else {
+			loopcondition = b.length();
+		}
+		
+		for (int i = 0; i < loopcondition; i++) {
+			char aStr = a.charAt(i);
+			char bStr = b.charAt(i);
+			count++;
+			result = result + aStr + bStr;
+		}
+
+		if (a.length() < b.length()) {
+			String sub = b.substring(count, b.length());
+			result = result + sub;
+		} else {
+			String sub = a.substring(count, a.length());
+			result = result + sub;
+		}
+		return result;
 	}
 	
 	public boolean sameStarChar(String str) {

@@ -1,6 +1,27 @@
 package Logic_2;
 
 public class Logic_2 {
+	
+	public static void main(String [] args) {
+		
+	}
+	
+	public int noTeenSum(int a, int b, int c) {
+		return fixTeen(a) + fixTeen(b) + fixTeen(c);
+	}
+
+	public int fixTeen(int n) {
+		if (n >= 13 && n <= 19) {
+			if (n == 15 || n == 16) {
+				return n;
+			} else {
+				return 0;
+			}
+		} else {
+			return n;
+		}
+	}
+
 	public int loneSum(int a, int b, int c) {
 		if (a == b && b == c) {
 			return 0;

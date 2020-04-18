@@ -9,15 +9,55 @@ public class Array_2 {
 
 	}
 	
-	public boolean only14(int[] nums) {
-		  for(int i=0; i<nums.length; i++){
-		    int value = nums[i];
-		    if(value !=4 && value !=1){
-		      return false;
-		    }
-		  }
-		  return true;
+	public boolean no14(int[] nums) {
+		boolean hasOne = false;
+		boolean hasFour = false;
+
+		for (int i = 0; i < nums.length; i++) {
+			int value = nums[i];
+			if (value == 1) {
+				hasOne = true;
+			}
+			if (value == 4) {
+				hasFour = true;
+			}
 		}
+		if (hasOne && hasFour) {
+			return false;
+		}
+		return true;
+	}
+
+	public int[] fizzArray(int n) {
+		int[] result = new int[n];
+
+		for (int i = 0; i < n; i++) {
+			result[i] = n - (n - i);
+		}
+
+		return result;
+	}
+	
+	public String[] fizzArray2(int n) {
+		String[] result = new String[n];
+
+		for (int i = 0; i < n; i++) {
+			result[i] = Integer.toString(n - (n - i));
+		}
+
+		return result;
+	}
+
+	
+	public boolean only14(int[] nums) {
+		for (int i = 0; i < nums.length; i++) {
+			int value = nums[i];
+			if (value != 4 && value != 1) {
+				return false;
+			}
+		}
+		return true;
+	}
 
 
 	public boolean has77(int[] nums) {
