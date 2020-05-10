@@ -6,6 +6,38 @@ public class Logic_2 {
 		
 	}
 	
+	public int roundSum(int a, int b, int c) {
+		return (round10(a) + round10(c) + round10(b));
+	}
+
+	public int round10(int num) {
+		int remainder = num % 10;
+
+		if (remainder >= 5) {
+			return (10 - remainder) + num;
+		} else if (remainder == 0) {
+			return num;
+		} else {
+			return num - remainder;
+		}
+	}
+
+	
+	
+	
+	public boolean closeFar(int a, int b, int c) {
+		  
+		  if (Math.abs(a - b) <= 1 && Math.abs(a - c) >= 2 && Math.abs(b - c) >= 2){
+		      return true;
+		  } else if (Math.abs(a - c) <= 1 && Math.abs(a - b) >= 2 && Math.abs(b - c) >= 2){
+		      return true;
+		  }else{
+		      return false;
+		  }
+
+		}
+	
+	
 	public int noTeenSum(int a, int b, int c) {
 		return fixTeen(a) + fixTeen(b) + fixTeen(c);
 	}

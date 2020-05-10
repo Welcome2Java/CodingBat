@@ -3,10 +3,97 @@ package BasicString_2;
 public class BasicString_2 {
 	
 	public static void main(String [] args) {
+		
+	}
+	
+	public String plusOut(String str, String word) {
+		String result = "";
 
+		int i = 0;
+		while (i < str.length()) {
+			if (i <= str.length() - word.length()) {
+				if(str.substring(i, i + word.length()).equals(word)) {
+					result += word;
+					i += word.length();
+				}else {
+					result += "+";
+					i++;
+				}
+			} else {
+				result += "+";
+				i++;
+			}
 
+		}
+		return result;
 	}
 
+
+	
+	public boolean prefixAgain(String str, int n) {
+		  String sub = str.substring(0,n);
+		  String newStr = str.replaceFirst(sub, "");
+		  if(newStr.contains(sub)){
+		    return true;
+		  }
+		  return false;
+		}
+
+	
+	public String zipZap(String str) {
+		String result = "";
+		if (str.length() < 3) {
+			return str;
+		}
+		if (!str.contains("z") && !str.contains("p")) {
+			return result;
+		} else if (str.contains("z") && !str.contains("p")) {
+			return str;
+		} else if (!str.contains("z") && str.contains("p")) {
+			return str;
+		} else {
+			for (int i = 0; i < str.length(); i++) {
+				char value = str.charAt(i);
+				if (value == 'z' && str.charAt(i + 2) == 'p') {
+					result = result + value + str.charAt(i + 2);
+					i++;
+					i++;
+				} else {
+					result += value;
+				}
+			}
+
+		}
+		return result;
+	}
+
+	
+	public String getSandwich(String str) {
+
+		String check = "bread";
+		int count = 0;
+
+		for (int i = 0; i < str.length() - 4; i++) {
+			String sub = str.substring(i, i + 5);
+			if (sub.equals(check)) {
+				count++;
+			}
+		}
+		
+		if (count == 1 || count == 0) {
+			return "";
+		} else {
+			int firstIndex = str.indexOf(check);
+			String firstCheck = str.substring(0, firstIndex + 5);
+			str = str.replaceFirst(firstCheck, "");
+
+			int lastIndex = str.lastIndexOf(check);
+			String result = str.substring(0, lastIndex);
+
+			return result;
+		}
+	}
+	
 	public boolean xyzThere(String str) {
 		if (!str.contains("xyz")) {
 			return false;
