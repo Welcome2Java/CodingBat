@@ -5,10 +5,57 @@ public class Array_2 {
 	//medium array solutions
 	
 	public static void main(String [] args) {
-
+		String[] result = fizzBuzz(1, 6);
 
 	}
-	
+
+	public String[] fizzBuzz(int start, int end) {
+		String[] result = new String[end-start];
+		int index = 0;
+		for(int i=start; i<end; i++){
+			if(i%3==0 && i%5==0){
+				result[index] = "FizzBuzz";
+				index++;
+			} else if(i%5==0){
+				result[index] = "Buzz";
+				index++;
+			} else if(i%3==0){
+				result[index] = "Fizz";
+				index++;
+			} else {
+				result[index] = Integer.toString(i);
+				index++;
+			}
+		}
+
+		return result;
+	}
+
+	public int[] evenOdd(int[] nums) {
+		int index = 0;
+		int[] result = new int[nums.length];
+
+		int i = 0;
+		while (i < nums.length) {
+			if (nums[i] % 2 == 0) {
+				result[index] = nums[i];
+				index++;
+			}
+			i++;
+		}
+
+		int n = 0;
+		while (n < nums.length) {
+			if (nums[n] % 2 != 0) {
+				result[index] = nums[n];
+				index++;
+			}
+			n++;
+		}
+		return result;
+	}
+
+
 	public int[] zeroFront(int[] nums) {
 		  int[] result = new int[nums.length];
 		  int count = 0;
