@@ -1,11 +1,15 @@
-package BasicString_2;
+package src.BasicString_2;
 
 public class BasicString_2 {
 	
 	public static void main(String [] args) {
-		
+
 	}
-	
+
+
+
+
+
 	public String plusOut(String str, String word) {
 		String result = "";
 

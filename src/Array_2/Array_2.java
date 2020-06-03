@@ -8,6 +8,44 @@ public class Array_2 {
 		String[] result = fizzBuzz(1, 6);
 
 	}
+	public int matchUp(int[] nums1, int[] nums2) {
+		int count = 0;
+
+		for(int i=0; i<nums1.length; i++){
+			int value1 = nums1[i];
+			int value2 = nums2[i];
+
+			if(Math.abs(value1-value2)<=2 && value1 != value2){
+				count++;
+			}
+		}
+		return count;
+	}
+	
+	public boolean either24(int[] nums) {
+		boolean has2 = false;
+		boolean has4 = false;
+
+		for (int i = 0; i < nums.length - 1; i++) {
+			if (nums[i] == 2 && nums[i] == nums[i + 1]) {
+				has2 = true;
+			}
+			if (nums[i] == 4 && nums[i] == nums[i + 1]) {
+				has4 = true;
+			}
+		}
+
+		if (has2 && has4) {
+			return false;
+		} else if (has2) {
+			return true;
+		} else if (has4) {
+			return true;
+		}
+
+		return false;
+
+	}
 
 	public String[] fizzBuzz(int start, int end) {
 		String[] result = new String[end-start];
