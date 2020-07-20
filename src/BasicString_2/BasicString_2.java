@@ -1,14 +1,10 @@
-package src.BasicString_2;
+package BasicString_2;
 
 public class BasicString_2 {
-	
-	public static void main(String [] args) {
+
+	public static void main(String[] args) {
 
 	}
-
-
-
-
 
 	public String plusOut(String str, String word) {
 		String result = "";
@@ -16,10 +12,10 @@ public class BasicString_2 {
 		int i = 0;
 		while (i < str.length()) {
 			if (i <= str.length() - word.length()) {
-				if(str.substring(i, i + word.length()).equals(word)) {
+				if (str.substring(i, i + word.length()).equals(word)) {
 					result += word;
 					i += word.length();
-				}else {
+				} else {
 					result += "+";
 					i++;
 				}
@@ -32,18 +28,15 @@ public class BasicString_2 {
 		return result;
 	}
 
-
-	
 	public boolean prefixAgain(String str, int n) {
-		  String sub = str.substring(0,n);
-		  String newStr = str.replaceFirst(sub, "");
-		  if(newStr.contains(sub)){
-		    return true;
-		  }
-		  return false;
+		String sub = str.substring(0, n);
+		String newStr = str.replaceFirst(sub, "");
+		if (newStr.contains(sub)) {
+			return true;
 		}
+		return false;
+	}
 
-	
 	public String zipZap(String str) {
 		String result = "";
 		if (str.length() < 3) {
@@ -71,7 +64,6 @@ public class BasicString_2 {
 		return result;
 	}
 
-	
 	public String getSandwich(String str) {
 
 		String check = "bread";
@@ -83,7 +75,7 @@ public class BasicString_2 {
 				count++;
 			}
 		}
-		
+
 		if (count == 1 || count == 0) {
 			return "";
 		} else {
@@ -97,7 +89,7 @@ public class BasicString_2 {
 			return result;
 		}
 	}
-	
+
 	public boolean xyzThere(String str) {
 		if (!str.contains("xyz")) {
 			return false;
@@ -110,12 +102,12 @@ public class BasicString_2 {
 			}
 		}
 	}
-	
+
 	public String mixString(String a, String b) {
-		
+
 		String result = "";
 		int count = 0;
-		
+
 		if (a.length() == 0) {
 			return b;
 		}
@@ -134,7 +126,7 @@ public class BasicString_2 {
 		} else {
 			loopcondition = b.length();
 		}
-		
+
 		for (int i = 0; i < loopcondition; i++) {
 			char aStr = a.charAt(i);
 			char bStr = b.charAt(i);
@@ -151,7 +143,7 @@ public class BasicString_2 {
 		}
 		return result;
 	}
-	
+
 	public boolean sameStarChar(String str) {
 		boolean verdict = false;
 
@@ -177,7 +169,6 @@ public class BasicString_2 {
 		}
 		return verdict;
 	}
-
 
 	public int countHi(String str) {
 
@@ -206,7 +197,7 @@ public class BasicString_2 {
 
 		return count;
 	}
-	
+
 	public boolean catDog(String str) {
 		int cat = 0;
 		int dog = 0;
@@ -254,8 +245,7 @@ public class BasicString_2 {
 	public boolean endOther(String a, String b) {
 		int lengthA = a.length();
 		int lengthB = b.length();
-		
-		
+
 		if (a.length() == 0 || b.length() == 0) {
 			return false;
 		}
@@ -264,7 +254,7 @@ public class BasicString_2 {
 			shortStr = a.toLowerCase();
 			b = b.toLowerCase();
 			if (b.contains(shortStr)) {
-				if(b.substring((lengthB-lengthA), lengthB).equals(shortStr)){
+				if (b.substring((lengthB - lengthA), lengthB).equals(shortStr)) {
 					return true;
 				}
 			}
@@ -273,7 +263,7 @@ public class BasicString_2 {
 			shortStr = b.toLowerCase();
 			a = a.toLowerCase();
 			if (a.contains(shortStr)) {
-				if(a.substring((lengthA-lengthB), lengthA).equals(shortStr)){
+				if (a.substring((lengthA - lengthB), lengthA).equals(shortStr)) {
 					return true;
 				}
 			}
@@ -283,37 +273,37 @@ public class BasicString_2 {
 	}
 
 	public int countCode(String str) {
-		  int count = 0;
-		  int length = str.length();
-		  if(length<4) {
-			  return 0;
-		  }
+		int count = 0;
+		int length = str.length();
+		if (length < 4) {
+			return 0;
+		}
 
-		  for(int i=0; i<length-3; i++) {
-			  char first = str.charAt(i);
-			  char second = str.charAt(i+1);
-			  char third = str.charAt(i+3);
-			  if(first == 'c' && second == 'o' && third == 'e') {
-				  count++;
-			  }
-		  }
-		  return count;
+		for (int i = 0; i < length - 3; i++) {
+			char first = str.charAt(i);
+			char second = str.charAt(i + 1);
+			char third = str.charAt(i + 3);
+			if (first == 'c' && second == 'o' && third == 'e') {
+				count++;
+			}
+		}
+		return count;
 	}
 
 	public boolean bobThere(String str) {
-		  int length = str.length();
-		  if(length<3){
-		    return false;
-		  }
-		  for(int i=0; i<length-2; i++){
-		    char first = str.charAt(i);
-		    char third = str.charAt(i+2);
-		    if(first == 'b' && third == 'b'){
-		      return true;
-		    }
-		  }
-		  return false;
+		int length = str.length();
+		if (length < 3) {
+			return false;
 		}
+		for (int i = 0; i < length - 2; i++) {
+			char first = str.charAt(i);
+			char third = str.charAt(i + 2);
+			if (first == 'b' && third == 'b') {
+				return true;
+			}
+		}
+		return false;
+	}
 
 	public String repeatSeparator(String word, String sep, int count) {
 		String result = "";
@@ -325,29 +315,27 @@ public class BasicString_2 {
 		}
 		return result;
 	}
-	
+
 	public String repeatEnd(String str, int n) {
 		String result = "";
-		String extract = str.substring(str.length()-n, str.length());
-		for(int i=0; i< n; i++) {
+		String extract = str.substring(str.length() - n, str.length());
+		for (int i = 0; i < n; i++) {
 			result = result + extract;
 		}
-		
-		
+
 		return result;
 	}
 
-
 	public String repeatFront(String str, int n) {
-		  String result = "";
-		  
-		  for(int i=n; i>0; i--){
-		    String sub = str.substring(0,i);
-		    result = result + sub;
-		  }
-		  return result;
+		String result = "";
+
+		for (int i = n; i > 0; i--) {
+			String sub = str.substring(0, i);
+			result = result + sub;
 		}
-	
+		return result;
+	}
+
 	public String oneTwo(String str) {
 		String result = "";
 
@@ -365,6 +353,5 @@ public class BasicString_2 {
 
 		return result;
 	}
-
 
 }

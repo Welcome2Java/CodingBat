@@ -4,10 +4,7 @@ public class Array_2 {
 	
 	//medium array solutions
 	
-	public static void main(String [] args) {
-		String[] result = fizzBuzz(1, 6);
-
-	}
+	
 	public int matchUp(int[] nums1, int[] nums2) {
 		int count = 0;
 
